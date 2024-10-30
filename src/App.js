@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import LoginForm from './Components/Login/LoginForm';
+import Card from './Components/Card/Card';
 
-function App() {
+const App = () => {
+  const handleLogin = (credentials) => {
+    // Hier kannst du die Logik für die Überprüfung der Anmeldeinformationen implementieren
+    console.log(credentials); // Beispiel: { username: 'example', password: 'password' }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LoginForm onLogin={handleLogin} />
+      <Card title="Welcome" content="This is a simple card component" />
     </div>
   );
-}
+};
 
 export default App;
